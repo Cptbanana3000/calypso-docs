@@ -1,0 +1,64 @@
+---
+title: Calypso IDE
+description: A phone-first code editor for Android — write, run and version code from your phone.
+template: splash
+hero:
+  tagline: Write, run, and version control real code — from your phone.
+  actions:
+    - text: Get started
+      link: /getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Run code with Termux
+      link: /termux-setup/
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## A real editor that fits in your pocket
+
+Calypso is a phone-first code editor for Android. It pairs a fast
+CodeMirror-based editor with on-device code execution and full Git support —
+so you can build, run, and commit without a laptop.
+
+<CardGrid stagger>
+	<Card title="Edit anywhere" icon="pencil">
+		A real code editor (CodeMirror 6) tuned for touch — syntax highlighting,
+		multi-tab editing, and a file explorer built for one-handed use.
+	</Card>
+	<Card title="Run on-device" icon="rocket">
+		Python (Pyodide) and JavaScript run right in the app — no setup. Import
+		packages on the fly via esm.sh and micropip.
+	</Card>
+	<Card title="Real IntelliSense" icon="open-book">
+		Type-aware autocomplete, hover, live diagnostics and go-to-definition —
+		from language servers running on-device. Install once, it just turns on.
+	</Card>
+	<Card title="Go further with Termux" icon="seti:shell">
+		Power users can wire up Termux for a real toolchain — node, npm, python,
+		git — with output streamed live, plus an interactive terminal and a web
+		preview for dev servers, all inside Calypso.
+	</Card>
+	<Card title="Create real web apps" icon="seti:react">
+		Start React, Vue, Svelte, or Angular projects from Calypso. The IDE
+		scaffolds the project through Termux, installs dependencies, and opens a
+		standard portable repo you can also edit on desktop.
+	</Card>
+	<Card title="Full Git workflow" icon="git-pull-request">
+		Clone, fetch, pull, push, and resolve merge conflicts — credentials
+		remembered so you're not retyping tokens every push.
+	</Card>
+</CardGrid>
+
+## Where to next?
+
+- New here? Start with [Getting started](/getting-started/).
+- Want real autocomplete, hover and diagnostics? See [IntelliSense](/intellisense/).
+- Want to understand what runs where? See [What works where](/capabilities/).
+- Need a real toolchain (`npm install`, native packages)? Follow the
+  [Termux setup guide](/termux-setup/).
+- Want an interactive shell or to preview a dev server in-app? See
+  [Terminal & web preview](/terminal/).
+- Hit an error? Check [Troubleshooting](/troubleshooting/).
