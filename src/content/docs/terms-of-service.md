@@ -62,4 +62,4 @@ take effect constitutes acceptance of the revised Terms.
 
 ## Contact
 
-Questions about these Terms can be sent to **[INSERT CONTACT EMAIL]**.
+Questions about these Terms can be sent to **captainbanana360@protonmail.com**.

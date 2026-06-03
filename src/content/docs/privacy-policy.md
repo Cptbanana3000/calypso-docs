@@ -106,4 +106,4 @@ here with an updated "Last updated" date.
 ## Contact
 
 If you have questions about this Privacy Policy, contact us at
-**[INSERT CONTACT EMAIL]**.
+**captainbanana360@protonmail.com**.
