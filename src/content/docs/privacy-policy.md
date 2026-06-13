@@ -3,7 +3,7 @@ title: Privacy Policy
 description: How Calypso IDE handles your data — what stays on your device, what leaves it, and why.
 ---
 
-_Last updated: 3 June 2026_
+_Last updated: 13 June 2026_
 
 This Privacy Policy explains how **Calypso IDE** ("Calypso", "the app", "we")
 handles information when you use it. Calypso is a phone-first code editor for
@@ -13,13 +13,17 @@ own device, and Calypso does not operate any servers that collect your data.
 ## Summary
 
 - **No account, no sign-up, no login.** Calypso does not have user accounts.
-- **No analytics, no advertising, no tracking.** We do not embed analytics SDKs,
-  ad networks, or telemetry. We do not profile you.
-- **Your files stay on your device.** Code, projects, and settings are stored
-  locally and are not uploaded to us.
-- **Network requests happen only when you ask for them** — running code that
-  imports packages, using Git, or installing a toolchain. Those requests go to
-  third-party services you choose, not to Calypso.
+- **No advertising, no behavioral analytics, no profiling.** We do not embed ad
+  networks or SDKs that track what you do in the app. We do use a crash- and
+  error-reporting service to capture diagnostics when something goes wrong — see
+  [Crash and error reporting](#crash-and-error-reporting).
+- **Your files stay on your device** — unless you use the optional AI assistant,
+  which sends the code or text you choose to your own AI provider using your own
+  API key. See [AI assistant](#ai-assistant-optional).
+- **Network requests are tied to actions you take** — running code that imports
+  packages, using Git, installing a toolchain, or asking the AI assistant. Those
+  go to third-party services you choose (for AI, the provider whose key you
+  entered), not to Calypso. The one automatic exception is crash diagnostics.
 
 ## Information Calypso stores on your device
 
@@ -65,6 +69,44 @@ We do not control these third-party services and they have their own privacy
 policies. Calypso sends them only what is needed to perform the action you
 requested (e.g. a package name, or your Git credentials to your Git host).
 
+## AI assistant (optional)
+
+Calypso includes an optional AI assistant. It is **bring-your-own-key**: you
+supply an API key from an AI provider (currently [Anthropic](https://www.anthropic.com)),
+and Calypso talks to that provider **directly from your device**. We do not
+operate any AI servers, we do not proxy your requests, and we never receive your
+key, your prompts, or the responses.
+
+- **Your API key** is stored in your device's secure keystore (Android Keystore,
+  via encrypted on-device storage). It is sent only to the AI provider to
+  authenticate your own requests — never to us.
+- **What is sent, and when.** Only when you invoke an AI action — Explain, Fix,
+  or Improve a selection, or send a chat message — does Calypso send the relevant
+  content to the provider: the code you selected, the file you choose to include
+  as context, and the messages you type. Nothing is sent until you trigger an
+  action.
+- **Billing and handling.** Usage is billed to your own provider account. Your
+  prompts and the provider's responses are governed by **the provider's** own
+  privacy policy and terms (for Anthropic, see their
+  [privacy policy](https://www.anthropic.com/legal/privacy)). Calypso does not
+  store your conversations; they exist only in memory for the current session.
+
+## Crash and error reporting
+
+To find and fix bugs, Calypso uses **Sentry**, a crash- and error-reporting
+service. When the app crashes or hits an unexpected error, a diagnostic report
+is sent to Sentry containing the error and technical context such as your device
+model, Android version, and app version. We have configured Sentry **not** to
+collect personal identifiers such as your IP address.
+
+If you tap **Report** on an AI response, Calypso additionally sends Sentry the
+reason you selected and an excerpt of that response (which may include code), so
+we can review flagged AI content as required for AI-powered apps. This happens
+**only when you tap Report**.
+
+Sentry processes this data on our behalf under its own
+[privacy policy](https://sentry.io/privacy/).
+
 ## Permissions Calypso requests, and why
 
 - **All files access (`MANAGE_EXTERNAL_STORAGE`).** Calypso is a code editor and
@@ -89,6 +131,9 @@ under their own privacy policies:
 - PyPI — Python package installs (via micropip)
 - npm registry — Node package installs (via Termux)
 - Your chosen Git host (e.g. GitHub) — Git fetch/pull/push
+- Anthropic — the AI assistant, when you configure an API key (your prompts and
+  the responses)
+- Sentry — crash and error diagnostics, and AI responses you choose to report
 
 The **Termux** app, used by Calypso's power features, is a separate application
 published independently and is not operated by us.

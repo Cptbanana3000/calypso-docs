@@ -3,7 +3,7 @@ title: Terms of Service
 description: The terms under which you may use Calypso IDE.
 ---
 
-_Last updated: 3 June 2026_
+_Last updated: 13 June 2026_
 
 These Terms of Service ("Terms") govern your use of the **Calypso IDE** app
 ("Calypso", "the app"). By installing or using Calypso, you agree to these
@@ -29,15 +29,29 @@ purpose of writing, running, and managing your own code.
 - **Credentials.** You are responsible for keeping your Git and service
   credentials secure.
 
+## AI assistant
+
+Calypso offers an optional AI assistant that you enable by entering your own API
+key from a third-party AI provider (currently Anthropic). When enabled, the code
+and messages you submit are sent directly to that provider, and usage is billed
+to **your** account with them under **their** terms.
+
+**AI-generated output can be inaccurate, incomplete, or insecure.** You are
+responsible for reviewing, testing, and deciding whether to use any code or
+suggestions the assistant produces, exactly as you would for code from any other
+source. Do not apply AI-generated changes to important work without reviewing
+them first. Calypso does not guarantee the correctness, safety, or suitability of
+AI output.
+
 ## Third-party services and software
 
 Calypso interoperates with independent third-party services and software,
 including (where you choose to use them) the **Termux** app, package registries
-(such as esm.sh, PyPI, and the npm registry), CDNs (such as jsDelivr), and Git
-hosts (such as GitHub). These are operated by others under their own terms and
-privacy policies. Calypso is not affiliated with, and is not responsible for,
-those services or software. Your use of them is governed by their respective
-terms.
+(such as esm.sh, PyPI, and the npm registry), CDNs (such as jsDelivr), Git
+hosts (such as GitHub), and the AI provider whose key you enter (such as
+Anthropic). These are operated by others under their own terms and privacy
+policies. Calypso is not affiliated with, and is not responsible for, those
+services or software. Your use of them is governed by their respective terms.
 
 ## No warranty
 
