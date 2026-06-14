@@ -3,7 +3,7 @@ title: Privacy Policy
 description: How Calypso IDE handles your data — what stays on your device, what leaves it, and why.
 ---
 
-_Last updated: 13 June 2026_
+_Last updated: 14 June 2026_
 
 This Privacy Policy explains how **Calypso IDE** ("Calypso", "the app", "we")
 handles information when you use it. Calypso is a phone-first code editor for
@@ -18,8 +18,9 @@ own device, and Calypso does not operate any servers that collect your data.
   error-reporting service to capture diagnostics when something goes wrong — see
   [Crash and error reporting](#crash-and-error-reporting).
 - **Your files stay on your device** — unless you use the optional AI assistant,
-  which sends the code or text you choose to your own AI provider using your own
-  API key. See [AI assistant](#ai-assistant-optional).
+  which sends the code, files, or project context you choose (or that the agent
+  reads from your open project) to your own AI provider using your own API key.
+  See [AI assistant](#ai-assistant-optional).
 - **Network requests are tied to actions you take** — running code that imports
   packages, using Git, installing a toolchain, or asking the AI assistant. Those
   go to third-party services you choose (for AI, the provider whose key you
@@ -72,24 +73,38 @@ requested (e.g. a package name, or your Git credentials to your Git host).
 ## AI assistant (optional)
 
 Calypso includes an optional AI assistant. It is **bring-your-own-key**: you
-supply an API key from an AI provider (currently [Anthropic](https://www.anthropic.com)),
-and Calypso talks to that provider **directly from your device**. We do not
-operate any AI servers, we do not proxy your requests, and we never receive your
-key, your prompts, or the responses.
+supply an API key from an AI provider you choose — currently
+[Anthropic](https://www.anthropic.com), [DeepSeek](https://www.deepseek.com), or
+[OpenAI](https://openai.com) — and Calypso talks to that provider **directly from
+your device**. We do not operate any AI servers, we do not proxy your requests,
+and we never receive your key, your prompts, or the responses.
 
-- **Your API key** is stored in your device's secure keystore (Android Keystore,
-  via encrypted on-device storage). It is sent only to the AI provider to
-  authenticate your own requests — never to us.
-- **What is sent, and when.** Only when you invoke an AI action — Explain, Fix,
-  or Improve a selection, or send a chat message — does Calypso send the relevant
-  content to the provider: the code you selected, the file you choose to include
-  as context, and the messages you type. Nothing is sent until you trigger an
-  action.
+- **Your API keys** are stored in your device's secure keystore (Android
+  Keystore, via encrypted on-device storage), one per provider. A key is sent
+  only to its own provider to authenticate your requests — never to us.
+- **What is sent, and when.** Calypso sends content to the provider **only when
+  you invoke an AI feature**, and only what that feature needs:
+  - *Selection actions* (Explain / Fix / Improve) and *chat* send the code you
+    selected or the message you type, plus any context you choose to attach with
+    the "Include file" or "Search project" options.
+  - The *agent*, at your request, can read and search across the files in the
+    project you have open and include their contents in its request to the
+    provider, so it can answer questions or propose edits. It only reads files
+    inside your open project.
+
+  Nothing is sent until you trigger an action.
+- **Editing your files.** When you ask the agent to create or change a file, the
+  file is written **locally on your device**, inside your open project — writing
+  never uploads anything. Depending on your setting, edits apply automatically or
+  after you approve them, and every change is shown to you. (The file contents the
+  agent *reads* in order to decide an edit are sent to your provider, as above.)
 - **Billing and handling.** Usage is billed to your own provider account. Your
-  prompts and the provider's responses are governed by **the provider's** own
-  privacy policy and terms (for Anthropic, see their
-  [privacy policy](https://www.anthropic.com/legal/privacy)). Calypso does not
-  store your conversations; they exist only in memory for the current session.
+  prompts and the provider's responses are governed by **that provider's** own
+  privacy policy and terms — see
+  [Anthropic](https://www.anthropic.com/legal/privacy),
+  [DeepSeek](https://www.deepseek.com), or
+  [OpenAI](https://openai.com/policies/privacy-policy/). Calypso does not store
+  your conversations; they exist only in memory for the current session.
 
 ## Crash and error reporting
 
@@ -131,8 +146,9 @@ under their own privacy policies:
 - PyPI — Python package installs (via micropip)
 - npm registry — Node package installs (via Termux)
 - Your chosen Git host (e.g. GitHub) — Git fetch/pull/push
-- Anthropic — the AI assistant, when you configure an API key (your prompts and
-  the responses)
+- Your chosen AI provider — Anthropic, DeepSeek, or OpenAI — for the AI
+  assistant, when you configure an API key (your prompts, the code and files it
+  reads or affects, and the responses)
 - Sentry — crash and error diagnostics, and AI responses you choose to report
 
 The **Termux** app, used by Calypso's power features, is a separate application
