@@ -128,6 +128,48 @@ The on-device runner only fetches pure-Python wheels via `micropip`. Some
 packages also have a different import name than their PyPI name. If it cannot
 be resolved on-device, use Termux with real `pip`.
 
+## AI assistant
+
+AI errors show as a short message inline in chat. Here's what each one means.
+See [AI assistant](/ai-assistant/) for how the feature works.
+
+### "Invalid API key — check it in Settings → AI Assistant"
+
+The key for the selected provider is wrong, expired, or revoked. Open **Settings
+→ AI Assistant**, re-paste the key, and let Calypso re-verify it. Make sure the
+key matches the provider you've selected — an Anthropic key won't work on OpenAI.
+
+### "Your provider account is out of credit"
+
+The key is valid but the account has no usable balance or quota. Add funds or
+check billing on your provider's dashboard (Anthropic, DeepSeek, or OpenAI).
+
+### "Rate limited — wait a moment and try again"
+
+You've sent requests faster than your provider plan allows. Wait a few seconds
+and retry. If it keeps happening, your provider tier may have a low rate limit.
+
+### "This conversation is too long for the model"
+
+The chat — plus any attached files or the agent's file reads — exceeded the
+model's context window. Start a **new chat** (the trash icon in the header) or
+shorten the conversation. A model with a larger context window also helps.
+
+### "The AI service is overloaded — try again shortly"
+
+The provider is busy on their end; this isn't a Calypso problem. Wait a moment
+and try again.
+
+### "Could not reach the AI — check your connection"
+
+Calypso couldn't reach the provider. Check your internet connection. On a
+restricted network, confirm the provider's API isn't blocked.
+
+### It still says "add a key" after I added one
+
+Each provider has its **own** key. If you switched providers, add a key for the
+newly selected one in **Settings → AI Assistant**.
+
 ## IntelliSense
 
 ### The IntelliSense chip is grey / nothing autocompletes

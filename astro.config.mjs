@@ -23,6 +23,12 @@ export default defineConfig({
           ],
         },
         {
+          label: 'AI assistant',
+          items: [
+            { label: 'AI assistant & agent', slug: 'ai-assistant' },
+          ],
+        },
+        {
           label: 'Writing code',
           items: [
             { label: 'IntelliSense', slug: 'intellisense' },

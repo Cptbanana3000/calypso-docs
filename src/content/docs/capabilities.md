@@ -31,6 +31,11 @@ app with its own permitted execution environment).
 | Create React / Vue / Svelte / Angular projects | ❌ | ✅ New Project |
 | IntelliSense (autocomplete, hover, diagnostics, go-to-def) | ⚠️ Basic (keywords + snippets) | ✅ Full (language servers) |
 | `git` CLI | ❌ (use Calypso's built-in Git) | ✅ |
+| AI assistant & agent (bring-your-own-key) | ✅ | ✅ |
+
+The **AI assistant** is independent of these tiers: it only needs an internet
+connection and your own API key, so it works whether or not you've set up Termux.
+See [AI assistant](/ai-assistant/).
 
 ## Tier 1 — on-device sandbox (default)
 

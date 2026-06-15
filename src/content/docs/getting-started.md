@@ -84,12 +84,29 @@ clone it on a desktop, edit it in VS Code, push changes back, then pull them
 into Calypso and keep working.
 :::
 
+## 6. Try the AI assistant
+
+Calypso has a built-in AI assistant. Add an API key (Anthropic, DeepSeek, or
+OpenAI) in **Settings → AI Assistant**, then:
+
+- Select code and tap the **✨ AI** button to **Explain**, **Fix**, or **Improve**
+  it.
+- Open **AI chat** to ask about your code — optionally attaching the open file or
+  letting Calypso search the project for the relevant files.
+- Switch on the **agent** to let it explore your project and make edits — you
+  review each change as a diff before it's applied.
+
+Your key is stored only on your device. See [AI assistant](/ai-assistant/) for
+the full guide.
+
 ## What's next?
 
 - Some things the on-device sandbox **can't** do (native packages, a real
   shell, `npm install` with binaries). See [What works where](/capabilities/)
   to understand the boundary.
 - To get a full local toolchain, set up [Termux](/termux-setup/).
+- Want AI that understands and edits your project? See
+  [AI assistant](/ai-assistant/).
 - Want real autocomplete, hover, diagnostics and go-to-definition? See
   [IntelliSense](/intellisense/).
 - Working with a repo? See the [Git workflow](/git-workflow/).
