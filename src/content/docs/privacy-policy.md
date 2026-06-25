@@ -87,10 +87,16 @@ and we never receive your key, your prompts, or the responses.
   - *Selection actions* (Explain / Fix / Improve) and *chat* send the code you
     selected or the message you type, plus any context you choose to attach with
     the "Include file" or "Search project" options.
-  - The *agent*, at your request, can read and search across the files in the
-    project you have open and include their contents in its request to the
-    provider, so it can answer questions or propose edits. It only reads files
-    inside your open project.
+  - The *agent*, at your request, reads and searches files in the project you
+    have open and includes their contents in its request to the provider, so it
+    can answer questions or propose edits. With [Termux](/termux-setup/) set up it
+    can also **run shell commands you approve**, and their output is sent back to
+    the provider so it can react. In a Git repository it can read diffs and
+    commit/push — commit messages and diffs are sent to the provider, while your
+    Git token is used locally for the push and is **not** part of the prompt. It
+    only ever acts inside your open project.
+  - Your **per-project memory** note (if you've set one) is included as context in
+    these requests, the same as an attached file.
 
   Nothing is sent until you trigger an action.
 - **Editing your files.** When you ask the agent to create or change a file, the
@@ -103,8 +109,10 @@ and we never receive your key, your prompts, or the responses.
   privacy policy and terms — see
   [Anthropic](https://www.anthropic.com/legal/privacy),
   [DeepSeek](https://www.deepseek.com), or
-  [OpenAI](https://openai.com/policies/privacy-policy/). Calypso does not store
-  your conversations; they exist only in memory for the current session.
+  [OpenAI](https://openai.com/policies/privacy-policy/). Calypso never receives
+  your conversations. Your **chat history** and **per-project memory** are stored
+  **locally on your device** (so history survives restarts) and are never sent to
+  us.
 
 ## Crash and error reporting
 
